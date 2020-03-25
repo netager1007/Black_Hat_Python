@@ -1,5 +1,6 @@
 import socket
-target_host = "127.0.0.1"
+#target_host = "192.168.1.128"
+target_host = "localhost"
 target_port = 9999
 
 # create a socket object
