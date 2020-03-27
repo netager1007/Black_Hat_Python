@@ -24,6 +24,7 @@ def handle_client(client_socket):
 
     # send back a packet
     client_socket.send("ACK!".encode())
+
     client_socket.close()
 
 while True:
