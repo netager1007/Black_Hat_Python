@@ -13,11 +13,13 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 server.bind((bind_ip, bind_port))
 
+# With a maximum backlog of connections set to 5
 server.listen(5)
 print("[*] Listening on %s:%d" % (bind_ip, bind_port))
 
 # this is our client-handling thread
 def handle_client(client_socket):
+
     # print out what the client sends
     request = client_socket.recv(1024)
     print("[*] Received: %s" % request)
@@ -28,7 +30,7 @@ def handle_client(client_socket):
     client_socket.close()
 
 while True:
-    print('[*] Start while loop:')
+
     client, addr = server.accept()
     print("[*] Accepted connection from: %s:%s:%s:%d" % (client, type(client), addr[0], addr[1]))
 
